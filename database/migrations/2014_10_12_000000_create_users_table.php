@@ -28,8 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('primaryPhone')->nullable();
             $table->string('secondaryPhone')->nullable();
             $table->date('birthDate')->nullable();
-            $table->unsignedBigInteger('team_id')->nullable()->unsigned();
-            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
+            $table->foreignId('current_team_id')->nullable();
             $table->dateTime('disabled_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
