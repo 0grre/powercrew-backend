@@ -30,6 +30,14 @@ class UserController extends Controller
 //    }
 
     /**
+     * @return JsonResponse
+     */
+    public function index(): JsonResponse
+    {
+        return $this->sendResponse(UserResource::collection(User::all()), 'Users found successfully.');
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
